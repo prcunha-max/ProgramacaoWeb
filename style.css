@@ -1,6 +1,6 @@
 
 /* ========================================
-   CONFIGURAÇÕES GERAIS
+   CONFIGURACOES GERAIS
 ======================================== */
 
 * {
@@ -14,10 +14,16 @@ body {
     background-color: #f2f5f9;
     color: #333333;
     line-height: 1.6;
+
+    /* GRID PRINCIPAL DA PAGINA */
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 1000px) 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    min-height: 100vh;
 }
 
 /* ========================================
-   CABEÇALHO
+   CABECALHO
 ======================================== */
 
 .cabecalho {
@@ -25,11 +31,17 @@ body {
     color: #ffffff;
     text-align: center;
     padding: 40px 20px;
+
+    /* Ocupa todas as colunas do Grid */
+    grid-column: 1 / -1;
+
+    display: grid;
+    justify-items: center;
+    gap: 10px;
 }
 
 h1 {
     font-size: 32px;
-    margin-bottom: 10px;
     color: #ffffff;
 }
 
@@ -39,20 +51,27 @@ h1 {
 }
 
 /* ========================================
-   NAVEGAÇÃO
+   NAVEGACAO
 ======================================== */
 
 .navegacao {
     background-color: #244b75;
     padding: 15px;
-    text-align: center;
+
+    grid-column: 1 / -1;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 10px;
+    align-items: center;
+    justify-items: center;
 }
 
 .navegacao a {
     color: #ffffff;
     text-decoration: none;
-    margin: 0 15px;
     font-weight: bold;
+    padding: 5px 10px;
     transition: color 0.3s;
 }
 
@@ -62,21 +81,34 @@ h1 {
 }
 
 /* ========================================
-   CONTEÚDO PRINCIPAL
+   CONTEUDO PRINCIPAL
 ======================================== */
 
 .conteudo {
-    width: 90%;
-    max-width: 1000px;
-    margin: 30px auto;
+    width: 100%;
+    padding: 30px 20px;
+    grid-column: 2;
+
+    /* GRID PARA ORGANIZAR AS SECOES */
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    align-content: start;
 }
 
 .secao {
     background-color: #ffffff;
     padding: 25px;
-    margin-bottom: 25px;
     border: 1px solid #d9e2ec;
     border-radius: 10px;
+}
+
+/* Algumas secoes ocupam as duas colunas */
+
+#apresentacao,
+#tecnologias,
+#contato {
+    grid-column: 1 / -1;
 }
 
 h2 {
@@ -93,7 +125,7 @@ p {
 }
 
 /* ========================================
-   APRESENTAÇÃO E IMAGEM
+   APRESENTACAO E IMAGEM
 ======================================== */
 
 .texto-apresentacao {
@@ -108,6 +140,78 @@ p {
     border: 4px solid #244b75;
     border-radius: 50%;
     margin: 20px auto;
+}
+
+/* ========================================
+   TECNOLOGIAS E INTERESSES
+======================================== */
+
+.grade-cartoes {
+    display: grid;
+
+    /* Cria colunas automaticas para os cartoes */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    /* Espacamento entre os cartoes */
+    gap: 20px;
+
+    margin-top: 25px;
+}
+
+.cartao {
+    background-color: #f8fafc;
+    border: 1px solid #cbd8e5;
+    border-left: 5px solid #244b75;
+    border-radius: 8px;
+    padding: 20px;
+
+    /* FLEXBOX PARA ORGANIZAR O CONTEUDO INTERNO */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 18px;
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cartao:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+}
+
+.cartao-conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cartao h3 {
+    color: #17365d;
+    font-size: 19px;
+}
+
+.cartao p {
+    font-size: 15px;
+    text-align: justify;
+    margin-bottom: 0;
+}
+
+/* Tags de cada cartao */
+
+.cartao-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.cartao-tags span {
+    background-color: #dce6f1;
+    color: #17365d;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 /* ========================================
@@ -129,7 +233,7 @@ p {
 }
 
 /* ========================================
-   LINKS DO CONTEÚDO
+   LINKS DO CONTEUDO
 ======================================== */
 
 .conteudo a {
@@ -143,7 +247,7 @@ p {
 }
 
 /* ========================================
-   FORMULÁRIO DE CONTATO
+   FORMULARIO DE CONTATO
 ======================================== */
 
 .formulario {
@@ -198,6 +302,8 @@ p {
 }
 
 .botoes-formulario {
+    display: flex;
+    gap: 10px;
     margin-top: 15px;
 }
 
@@ -208,7 +314,6 @@ p {
     cursor: pointer;
     font-size: 15px;
     font-weight: bold;
-    margin-right: 10px;
     transition: background-color 0.3s;
 }
 
@@ -231,7 +336,7 @@ p {
 }
 
 /* ========================================
-   RODAPÉ
+   RODAPE
 ======================================== */
 
 .rodape {
@@ -239,7 +344,14 @@ p {
     color: #ffffff;
     text-align: center;
     padding: 25px;
-    margin-top: 30px;
+
+    /* Ocupa todas as colunas do Grid */
+    grid-column: 1 / -1;
+
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    gap: 5px;
 }
 
 .rodape p {
@@ -261,7 +373,27 @@ p {
    RESPONSIVIDADE
 ======================================== */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
+
+    body {
+        grid-template-columns: 1fr;
+    }
+
+    .conteudo {
+        grid-column: 1;
+        grid-template-columns: 1fr;
+        padding: 20px 15px;
+    }
+
+    #apresentacao,
+    #tecnologias,
+    #contato {
+        grid-column: 1;
+    }
+
+    .grade-cartoes {
+        grid-template-columns: 1fr;
+    }
 
     .cabecalho {
         padding: 25px 15px;
@@ -271,13 +403,12 @@ p {
         font-size: 24px;
     }
 
-    .navegacao a {
-        display: inline-block;
-        margin: 5px 8px;
+    h2 {
+        font-size: 21px;
     }
 
-    .conteudo {
-        width: 95%;
+    .navegacao {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .secao {
@@ -288,7 +419,7 @@ p {
         padding: 15px;
     }
 
-    .botoes-formulario button {
-        margin-bottom: 10px;
+    .botoes-formulario {
+        flex-wrap: wrap;
     }
 }
