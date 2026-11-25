@@ -1,0 +1,375 @@
+
+/* =========================================
+   CONFIGURAÇÕES GERAIS
+========================================= */
+
+/* Box sizing para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Imagens adaptáveis */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+.cabecalho {
+    background-color: #243447;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.cabecalho h1 {
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+}
+
+.cabecalho p {
+    font-size: 1rem;
+}
+
+/* =========================================
+   MENU DE NAVEGAÇÃO
+========================================= */
+
+.navegacao {
+    background-color: #34495e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.navegacao a {
+    color: white;
+    text-decoration: none;
+    padding: 0.7rem 1rem;
+    text-align: center;
+    width: 100%;
+    border-radius: 0.3rem;
+    transition: background-color 0.3s;
+}
+
+.navegacao a:hover {
+    background-color: #1abc9c;
+}
+
+/* =========================================
+   CONTEÚDO PRINCIPAL
+========================================= */
+
+.conteudo {
+    width: 92%;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+.secao {
+    background-color: white;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.secao h2 {
+    color: #243447;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* =========================================
+   APRESENTAÇÃO PESSOAL
+========================================= */
+
+.apresentacao-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.foto-perfil {
+    width: 12rem;
+    max-width: 100%;
+    border-radius: 0.5rem;
+    object-fit: cover;
+}
+
+.texto-apresentacao {
+    text-align: justify;
+}
+
+/* =========================================
+   CARTÕES DE TECNOLOGIAS E INTERESSES
+========================================= */
+
+/* Mobile First: um cartão por linha */
+
+.grade-cartoes {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.cartao {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-left: 5px solid #1abc9c;
+    border-radius: 0.5rem;
+    padding: 1.2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cartao:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+}
+
+.cartao h3 {
+    color: #243447;
+    font-size: 1.15rem;
+    margin-bottom: 0.8rem;
+}
+
+.cartao p {
+    text-align: justify;
+}
+
+.cartao-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.cartao-tags span {
+    background-color: #e8f6f3;
+    color: #117a65;
+    padding: 0.3rem 0.7rem;
+    border-radius: 1rem;
+    font-size: 0.85rem;
+}
+
+/* =========================================
+   LISTA DE HOBBIES
+========================================= */
+
+.lista-hobbies {
+    padding-left: 1.5rem;
+}
+
+.lista-hobbies li {
+    margin-bottom: 0.5rem;
+}
+
+/* =========================================
+   FORMULÁRIO DE CONTATO
+========================================= */
+
+.formulario {
+    margin-top: 1rem;
+}
+
+.formulario fieldset {
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.formulario legend {
+    font-weight: bold;
+    color: #243447;
+    padding: 0 0.5rem;
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.grupo-campo label {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.grupo-campo input,
+.grupo-campo textarea {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-family: inherit;
+    border: 1px solid #bbb;
+    border-radius: 0.3rem;
+}
+
+.grupo-campo textarea {
+    resize: vertical;
+}
+
+.grupo-campo input:focus,
+.grupo-campo textarea:focus {
+    outline: 2px solid #1abc9c;
+    border-color: #1abc9c;
+}
+
+.botoes-formulario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.botoes-formulario button {
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 0.3rem;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.botao-enviar {
+    background-color: #1abc9c;
+}
+
+.botao-limpar {
+    background-color: #7f8c8d;
+}
+
+.botao-enviar:hover {
+    background-color: #16a085;
+}
+
+.botao-limpar:hover {
+    background-color: #626e70;
+}
+
+/* =========================================
+   RODAPÉ
+========================================= */
+
+.rodape {
+    background-color: #243447;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+}
+
+.rodape p {
+    margin-bottom: 0.5rem;
+}
+
+.rodape a {
+    color: #1abc9c;
+    text-decoration: none;
+}
+
+.rodape a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   TABLETS
+   Telas a partir de 768px
+========================================= */
+
+@media screen and (min-width: 768px) {
+
+    /* Menu horizontal */
+    .navegacao {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .navegacao a {
+        width: auto;
+    }
+
+    /* Apresentação com imagem e texto lado a lado */
+    .apresentacao-conteudo {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .foto-perfil {
+        width: 14rem;
+        flex-shrink: 0;
+    }
+
+    /* Dois cartões por linha */
+    .grade-cartoes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cabecalho h1 {
+        font-size: 2rem;
+    }
+
+    .conteudo {
+        width: 90%;
+    }
+}
+
+/* =========================================
+   COMPUTADORES
+   Telas a partir de 1024px
+========================================= */
+
+@media screen and (min-width: 1024px) {
+
+    /* Três cartões por linha */
+    .grade-cartoes {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .conteudo {
+        width: 85%;
+        max-width: 75rem;
+    }
+
+    .cabecalho {
+        padding: 2.5rem 1rem;
+    }
+
+    .cabecalho h1 {
+        font-size: 2.2rem;
+    }
+
+    .secao {
+        padding: 2rem;
+    }
+
+    .foto-perfil {
+        width: 16rem;
+    }
+}
